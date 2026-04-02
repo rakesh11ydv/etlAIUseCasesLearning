@@ -1,5 +1,98 @@
-*.class
-*.log
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+# Binaries
+*.class
+*.log
+hs_err_pid*
+
+# sbt and Scala build artifacts
+target/
+project/target/
+project/project/target/
+metastore_db/
+.derby.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Coursier cache
+.cache/
+.coursier/
+
+# Mac OS
+.DS_Store
+
+# JARs
+*.jar
+
+# Test result files
+*.cache
+
+# sbt bloop
+.bloop/
+.metals/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+env/
+*.egg-info/
+
+# Airflow-specific
+logs/
+*.db
+airflow.db
+unittests.cfg
+.venv/
+
+# Airflow config and secrets
+.env
+*.env
+config/
+
+# Airflow SQLite DB (if using local testing)
+airflow.sqlite
+
+# Docker
+*.pid
+*.pid.lock
+docker-compose.override.yml
+
+# DAG example backups
+dags/__pycache__/
+
+# Jupyter notebooks (if any)
+.ipynb_checkpoints
+
+# macOS system files
+.DS_Store
+
+# IntelliJ / PyCharm IDE files
+.idea/
+*.iml
+
+# VSCode (if you use it sometimes)
+.vscode/
+
+#spark-warehouse
+# Ignore Spark warehouse files
+spark-warehouse/
+
+
+# System files
+Thumbs.db
+ehthumbs.db
+desktop.ini
