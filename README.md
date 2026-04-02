@@ -20,9 +20,61 @@ sbt clean compile
 sbt run
 ```
 
+### Run Tests
+```bash
+sbt test
+```
+
+### Run Specific Test Suite
+```bash
+sbt "testOnly MainTestSuite"
+sbt "testOnly CollectionTestSuite"
+```
+
 ### Package as JAR
 ```bash
 sbt package
+```
+
+## Testing
+
+This project includes comprehensive testing frameworks for Spark jobs:
+
+### Testing Frameworks
+- **ScalaTest** - Primary testing framework with multiple DSLs (FunSuite, WordSpec, etc.)
+- **spark-testing-base** - Holden Karau's library for DataFrame/Dataset comparison utilities
+
+### Test Capabilities
+- ✅ DataFrame comparison and assertions
+- ✅ Dataset testing with type safety
+- ✅ Scala collection testing (List, Set, Map, Seq)
+- ✅ Spark SQL transformations
+- ✅ Aggregations and groupBy operations
+
+### Test Files
+- `src/test/scala/MainTestSuite.scala` - DataFrame, Dataset, and Spark SQL tests
+- `src/test/scala/CollectionTestSuite.scala` - Scala collection tests
+
+### Example Test Patterns
+
+**DataFrame Comparison:**
+```scala
+val expected = Seq((1, "a")).toDF("id", "name")
+val actual = Seq((1, "a")).toDF("id", "name")
+assertDataFrameEquals(expected, actual)
+```
+
+**Dataset Testing:**
+```scala
+case class Person(id: Int, name: String)
+val ds = Seq(Person(1, "Alice")).toDS()
+assert(ds.count() === 1)
+```
+
+**Collection Testing:**
+```scala
+val list = List(1, 2, 3)
+assert(list.map(_ * 2) === List(2, 4, 6))
 ```
 
 ## Configuration
