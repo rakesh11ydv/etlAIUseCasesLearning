@@ -6,3 +6,8 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "3.3.0",
   "org.apache.spark" %% "spark-sql" % "3.3.0"
 )
+
+javaOptions ++= Seq(
+  "-Xmx4g",
+  "-Xms1g"
+)
